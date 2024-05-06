@@ -6,6 +6,7 @@
 * App に Maui 追加　※途中
 * Todo ページ追加　※途中
 * CSS が charset と異なり UTF-8 with BOM で保存されていたことで一部スタイルが適用されなかった問題を修正 
+* DevContainer で Android の publish 対応　※途中
 
 ![](/doc/image/図1.drawio.png)
 

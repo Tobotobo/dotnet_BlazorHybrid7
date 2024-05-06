@@ -97,7 +97,7 @@
         "net8.0-android",
         "${workspaceFolder}/src/App/BlazorHybrid.App.Maui",
         "-p:GenerateFullPaths=true",
-        "-p:AndroidSdkDirectory=C:/Users/user/AppData/Local/Android/Sdk",
+        "-p:AndroidSdkDirectory=/usr/lib/android-sdk",
         "-p:AndroidPackageFormats=apk",
         "-o",
         "${workspaceFolder}/publish/BlazorHybrid.App.Maui-Android"
