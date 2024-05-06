@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="_content/BlazorHybrid.View/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="BlazorHybrid.App.Web.styles.css" />
+    <link rel="icon" type="image/png" href="_content/BlazorHybrid.View/favicon.png" />
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+
+<body>
+    <Routes @rendermode="InteractiveServer" />
+    @* ↓↓↓ Razor(RZ9992) の警告が出るが無視する *@
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>

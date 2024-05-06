@@ -1,0 +1,48 @@
+﻿@page "/weather"
+@inject IWeatherState state 
+
+<PageTitle>Weather</PageTitle>
+
+<h1>天気</h1>
+
+<p>このコンポーネントは、データ表示のデモンストレーションです。</p>
+
+@if (state.WeatherForecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日付</th>
+                <th>温度(摂氏℃)</th>
+                <th>温度(華氏℉)</th>
+                <th>温度感</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in state.WeatherForecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToString("gg y 年 M 月 d 日", cultureJp)</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private System.Globalization.CultureInfo cultureJp = new System.Globalization.CultureInfo("ja-jp", false);
+
+    protected override async Task OnInitializedAsync()
+    {
+        cultureJp.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
+
+        await state.LoadWeatherForecastsAsync();
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // IntelliSense を使用して、C# デバッグに存在する属性を確認します
+      // 既存の属性の説明にホバーを使用する
+      // 詳細については、https://github.com/dotnet/vscode-csharp/blob/main/debugger-launchjson.md を参照してください。
+      "name": ".NET Core Launch (Web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "🛠️build-web",
+      // ターゲット フレームワークを変更した場合は、プログラム パスを更新するようにしてください。
+      "program": "${workspaceFolder}/src/App/BlazorHybrid.App.Web/bin/Debug/net8.0/BlazorHybrid.App.Web.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/App/BlazorHybrid.App.Web",
+      "stopAtEntry": false,
+      // ASP.NET Core の起動時に Web ブラウザーの起動を有効にします。詳細については、次を参照してください: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5080"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "checkForDevCert": false
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach"
+    }
+  ]
+}

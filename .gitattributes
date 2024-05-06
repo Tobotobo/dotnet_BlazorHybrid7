@@ -1,0 +1,5 @@
+# Adopting the MudBlazor team defaults
+# https://github.com/MudBlazor/MudBlazor/blob/dev/.gitattributes
+* text=auto eol=lf
+*.sln text eol=crlf
+*.png -text

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    
+    <RootNamespace>BlazorHybrid.App.Wpf</RootNamespace>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <StartupObject>BlazorHybrid.App.Wpf.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\View\BlazorHybrid.View\BlazorHybrid.View.csproj" />
+    <ProjectReference Include="..\BlazorHybrid.App\BlazorHybrid.App.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.20" />
+  </ItemGroup>
+
+</Project>

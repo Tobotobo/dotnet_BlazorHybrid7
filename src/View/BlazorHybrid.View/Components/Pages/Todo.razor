@@ -1,0 +1,52 @@
+@page "/todo"
+@inject ITodoState state
+
+<PageTitle>Todo</PageTitle>
+
+@if (state.Todos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h1>Todo</h1>
+    <p>未完了… @GetPendingTodosCount() 件</p>
+
+    <ul>
+        @foreach (var todo in state.Todos)
+        {
+            <li class="mb-3">
+                <input type="checkbox" checked="@todo.IsDone" @onchange="e => UpdateTodoIsDone(e, todo)"/>
+                <input value="@todo.Title" @onchange="e => UpdateTodoTitle(e, todo)" />
+            </li>
+        }
+    </ul>
+
+    <input class="mb-3" placeholder="Something todo" @bind="state.NewTodoTitle" />
+    <button class="btn btn-primary" @onclick="state.AddTodo">Add todo</button>
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await state.LoadTodos();
+    }
+
+    int GetPendingTodosCount()
+    {
+        return state.Todos!.Count(todo => !todo.IsDone);
+    }
+
+    async Task UpdateTodoIsDone(ChangeEventArgs e, BlazorHybrid.Model.Entities.Todo todo) {
+        var value = ((bool?)e.Value) ?? false;
+        await state.UpdateTodoIsDone(todo, value);
+    }
+
+    async Task UpdateTodoTitle(ChangeEventArgs e, BlazorHybrid.Model.Entities.Todo todo) {
+        var value = e.Value?.ToString() ?? "";
+        await state.UpdateTodoTitle(todo, value);
+    }
+}
+
+
+

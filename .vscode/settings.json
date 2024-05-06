@@ -1,0 +1,13 @@
+{
+  "extensions.ignoreRecommendations": true,
+  "dotnet.server.useOmnisharp": true,
+  // "editor.formatOnSave": true,
+  // "razor.format.enable": false,
+  "[csharp]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "[razor][aspnetcorerazor]": {
+    "editor.formatOnSave": false,
+  }
+}

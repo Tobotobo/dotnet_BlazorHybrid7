@@ -1,0 +1,175 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "👀watch-web",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Web"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "📤publish-forms",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "-r",
+        "win-x64",
+        "--self-contained",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Forms",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign",
+        "-o",
+        "${workspaceFolder}/publish/BlazorHybrid.App.Forms"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "📤publish-wpf",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "-r",
+        "win-x64",
+        "--self-contained",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Wpf",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign",
+        "-o",
+        "${workspaceFolder}/publish/BlazorHybrid.App.Wpf"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "📤publish-maui-windows",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "-f",
+        "net8.0-windows10.0.19041.0",
+        "--self-contained",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Maui",
+        "/property:WindowsPackageType=None",
+        "/property:GenerateFullPaths=true",
+        "-o",
+        "${workspaceFolder}/publish/BlazorHybrid.App.Maui-Windows"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "📤publish-maui-android",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "-f",
+        "net8.0-android",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Maui",
+        "-p:GenerateFullPaths=true",
+        "-p:AndroidSdkDirectory=C:/Users/user/AppData/Local/Android/Sdk",
+        "-p:AndroidPackageFormats=apk",
+        "-o",
+        "${workspaceFolder}/publish/BlazorHybrid.App.Maui-Android"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "🛠️build-web",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Web",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign"
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "🧹clean",
+      "type": "shell",
+      "command": "dotnet clean '${workspaceFolder}/src/BlazorHybrid.sln' --nologo -c Debug && dotnet clean '${workspaceFolder}/src/BlazorHybrid.sln' --nologo -c Release",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "🧪test",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "test",
+        "${workspaceFolder}/src/BlazorHybrid.sln",
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "🔄restore",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "restore",
+        "${workspaceFolder}/src/BlazorHybrid.sln",
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+  ]
+}
