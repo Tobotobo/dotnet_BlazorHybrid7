@@ -157,12 +157,8 @@
     },
     {
       "label": "🔄restore",
-      "command": "dotnet",
       "type": "shell",
-      "args": [
-        "restore",
-        "${workspaceFolder}/src/BlazorHybrid.sln",
-      ],
+      "command": "dotnet workload restore '${workspaceFolder}/src/BlazorHybrid.sln' && dotnet restore '${workspaceFolder}/src/BlazorHybrid.sln'",
       "group": "build",
       "problemMatcher": "$msCompile",
       "presentation": {
