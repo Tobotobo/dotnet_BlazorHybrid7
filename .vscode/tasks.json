@@ -93,6 +93,8 @@
       "type": "process",
       "args": [
         "publish",
+        // "-v",
+        // "diag",
         "-f",
         "net8.0-android",
         "${workspaceFolder}/src/App/BlazorHybrid.App.Maui",
