@@ -1,0 +1,9 @@
+# https://code.visualstudio.com/docs/devcontainers/create-dev-container
+services:
+  dev:
+      build:
+        context: ./docker/dev
+        dockerfile: Dockerfile
+      volumes:
+        - .:/workspace:cached
+      command: /bin/sh -c "while sleep 1000; do :; done"
